@@ -1,8 +1,10 @@
 <div class="container">
-  <div class="row">
-    <div class="col-xs-12">
-      
+  <app-cockpit></app-cockpit>
+    <div class="row">
+      <div class="col-xs-12">
+        <hr>
+          <app-server-element *ngFor="let server of serverElements"
+          [alias]="server"></app-server-element>
       </div>
-    </div>
   </div>
 </div>
