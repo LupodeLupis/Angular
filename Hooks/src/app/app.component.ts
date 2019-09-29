@@ -18,14 +18,15 @@ export class AppComponent {
        content: serverData.serverContent
      });
    }
-
-   
- 
    onBlueprintAdded(bluePrint:{serverName:string, serverContent:string}) {
        this.serverElements.push({
        type: 'blueprint',
        name: bluePrint.serverName,
        content: bluePrint.serverContent
      });
+   }
+
+   onChangeElement(){
+     this.serverElements[0].name = 'Changed!'
    }
 }
