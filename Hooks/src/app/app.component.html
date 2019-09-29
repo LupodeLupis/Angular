@@ -7,6 +7,7 @@
       <div class="col-xs-12">
         <hr>
           <button class="btn btn-primary" (click)="onChangeElement()">Change first Element</button>
+          <button class="btn btn-danger" (click)="onDestroyFirst()">Destroy first component</button>
           <app-server-element 
           *ngFor="let server of serverElements" [name]="server.name">
           <!-- the paragraph below is PROJECTED to the app server component with the help of <ng-content></ng-content>
