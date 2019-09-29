@@ -6,23 +6,26 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  serverElements = [];
-  newServerName = '';
-  newServerContent = '';
+  serverElements = [{type:'server', name:'TestServer' , content:"Test"}];
+  /*
+   We get this data in onServerAdded and we call onServerAdded once our custom event occurs on the cockpit
+   this method will be executed after the button on cockpit componenent will be executed  -- after 'the server will be created'  -- 
+   */
+  onServerAdded(serverData:{serverName: string, serverContent: string}) {  
+       this.serverElements.push({
+       type: 'server',
+       name: serverData.serverName,
+       content: serverData.serverContent
+     });
+   }
 
-  onAddServer() {
-    this.serverElements.push({
-      type: 'server',
-      name: this.newServerName,
-      content: this.newServerContent
-    });
-  }
-
-  onAddBlueprint() {
-    this.serverElements.push({
-      type: 'blueprint',
-      name: this.newServerName,
-      content: this.newServerContent
-    });
-  }
+   
+ 
+   onBlueprintAdded(bluePrint:{serverName:string, serverContent:string}) {
+       this.serverElements.push({
+       type: 'blueprint',
+       name: bluePrint.serverName,
+       content: bluePrint.serverContent
+     });
+   }
 }
