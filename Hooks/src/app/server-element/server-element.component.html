@@ -1,9 +1,13 @@
 <div
     class="panel panel-default">
-    <div class="panel-heading">{{ element.name }}</div>
+    <div class="panel-heading" #heading >{{ name }}</div>
     <div class="panel-body">
-        <p>
-        <strong *ngIf="element.type === 'server'" style="color: red">{{ element.content }}</strong>
-        <em *ngIf="element.type === 'blueprint'">{{ element.content }}</em>
-        </p>
+        <ng-content></ng-content>
+        <!-- this code was rendering data to the app.component.ts where the server-components is hosted
+            <p>
+            <strong *ngIf="server.type === 'server'" style="color: red">{{ server.content }}</strong>
+            <em *ngIf="server.type === 'blueprint'">{{ server.content }}</em>
+          </p>
+        -->
+    </div>
 </div>

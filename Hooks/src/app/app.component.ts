@@ -18,9 +18,6 @@ export class AppComponent {
        content: serverData.serverContent
      });
    }
-
-   
- 
    onBlueprintAdded(bluePrint:{serverName:string, serverContent:string}) {
        this.serverElements.push({
        type: 'blueprint',
@@ -28,4 +25,12 @@ export class AppComponent {
        content: bluePrint.serverContent
      });
    }
+
+   onChangeElement(){
+     this.serverElements[0].name = 'Changed!'
+   }
+
+   onDestroyFirst(){
+    this.serverElements.splice(0,1); // there is only one element
+  }
 }
